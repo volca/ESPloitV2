@@ -32,8 +32,8 @@
  * 
  */
 
-int program_pin = 12;
-int enable_pin = 13;
+const int program_pin   = 12;
+const int enable_pin    = 13;
 
 void setup()
 {
@@ -66,6 +66,4 @@ void loop()
     }
   }
 }
-
-
 
