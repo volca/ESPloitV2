@@ -26,15 +26,15 @@ Initial Flashing
 pio platform install espressif8266
 ```
 * Download [esptool][esptool] 0.4.14 and overwrite the tool-esptool directory
- * For windows or mac OS, it should be `/Users/{your-name}/.platformio/packages/tool-esptool`
- * For Unix like, find the directory at `$(HOME)/.platformio/packages/tool-esptool`
+  * For windows or mac OS, it should be `/Users/{your-name}/.platformio/packages/tool-esptool`
+  * For Unix like, find the directory at `$(HOME)/.platformio/packages/tool-esptool`
 * Flash the WHID with command
- * Win
+  * Win
 ```
 cd source
 flash.bat
 ```
- * Unix Like
+  * Unix Like
 ```
 cd source
 ./flash.sh
