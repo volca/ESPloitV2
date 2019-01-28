@@ -24,21 +24,14 @@ Initial Flashing
 * Run command 
 ```
 pio platform install espressif8266
+cd source
 ```
 * Download [esptool][esptool] 0.4.14 and overwrite the tool-esptool directory
   * For windows or mac OS, it should be `/Users/{your-name}/.platformio/packages/tool-esptool`
   * For Unix like, find the directory at `$(HOME)/.platformio/packages/tool-esptool`
 * Flash the WHID with command
-  * Win
-```
-cd source
-flash.bat
-```
-  * Unix Like
-```
-cd source
-./flash.sh
-```
+  * For Win, run `flash.bat`
+  * For Unix Like, run `./flash.sh`
 * Your ESPloit is now ready to configure and or use.  
   
 -----  
