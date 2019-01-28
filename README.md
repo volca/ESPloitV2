@@ -19,6 +19,8 @@ Video Demo
 Initial Flashing  
 -----  
   
+* Install [platformio][pio]
+* 
 Download and Install the Arduino IDE from http://www.Arduino.cc  
 Open Arduino IDE.  
 Go to File - Preferences. Locate the field "Additional Board Manager URLs:"  
@@ -456,3 +458,5 @@ ESPloitV2 software is licensed under the MIT License
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
  SOFTWARE.  
 */
+
+[pio]: http://docs.platformio.org/en/latest/installation.html
