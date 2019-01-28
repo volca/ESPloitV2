@@ -22,7 +22,7 @@
 
 
 /*
-* connection table:
+ * connection table:
  * ESP8266  Cactus Micro Rev2
  * GPIO0    12
  * ENABLE   13
@@ -32,38 +32,63 @@
  * 
  */
 
-const int program_pin   = 12;
-const int enable_pin    = 13;
+const int led_pin               = 11;
+const int program_pin           = 12;
+const int enable_pin            = 13;
 
-void setup()
-{
-  Serial1.begin(115000);
-  Serial.begin(115000);
-  pinMode(enable_pin, OUTPUT);
-  pinMode(program_pin, OUTPUT);
-  digitalWrite(program_pin, LOW);
-  digitalWrite(enable_pin,HIGH);
+const int upload_timeout        = 5000;
 
-  //while(!Serial);
+unsigned long last_serial_time  = 0;
 
-  Serial.println("ESP8266 programmer ready.");
+void serial1Flush(){
+  while(Serial1.available() > 0) {
+    (void)Serial1.read();
+  }
 }
 
-void loop()
-{
-  // pass data from ESP to host, if any
-  while(Serial1.available())
-  {
-    Serial.write((uint8_t)Serial1.read());
-  }
+void reset_esp() {
+    digitalWrite(enable_pin, LOW);
+    delay(1000);
+    digitalWrite(enable_pin,HIGH);
+    delay(1000);
+    serial1Flush();
+}
 
-  // pass data from host to ESP, if any
-  if(Serial.available())
-  {
-    while(Serial.available())
-    {
-      Serial1.write((uint8_t)Serial.read());
+void setup() {
+    Serial1.begin(115000);
+    Serial.begin(115000);
+    pinMode(enable_pin,     OUTPUT);
+    pinMode(program_pin,    OUTPUT);
+    pinMode(led_pin,        OUTPUT);
+    digitalWrite(program_pin, LOW);
+
+    // Reset ESP
+    reset_esp();
+
+    //while(!Serial);
+    Serial.println("ESP8266 programmer ready.");
+}
+
+void loop() {
+    if ((last_serial_time > 0) and (millis() - last_serial_time > upload_timeout)) {
+        last_serial_time = 0;
+        digitalWrite(led_pin, 0);
+        reset_esp();
     }
-  }
+
+    // pass data from ESP to host, if any
+    while(Serial1.available()) {
+        Serial.write(Serial1.read());
+    }
+
+    // pass data from host to ESP, if any
+    if(Serial.available()) {
+        while(Serial.available()) {
+            char c = Serial.read();
+            digitalWrite(led_pin, 1);
+            last_serial_time = millis();
+            Serial1.write((uint8_t)c);
+        }
+    }
 }
 
