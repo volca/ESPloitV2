@@ -29,38 +29,6 @@ pio platform install espressif8266
   * For windows or mac OS, it should be `/Users/{your-name}/.platformio/packages/tool-esptool`
   * For Unix like, find the directory at `$(HOME)/.platformio/packages/tool-esptool`
 * Download [source file](https://github.com/volca/ESPloitV2/archive/master.zip) and decompress the file
-* Fix [a bug](https://github.com/platformio/platform-atmelavr/pull/135) that platformio give a wrong HWID. You can the find the file `boards/LilyPadUSB.json` at your `{HOME-DIR}/.platformio` directory. Replace the content
-
-Before
-
-```
-"hwids": [
-      [
-        "0x1B4F",
-        "0x9207"
-      ],
-      [
-        "0x1B4F",
-        "0x9208"
-      ]
-    ],
-```
-
-After
-
-```
-"hwids": [
-      [
-        "0x1B4F",
-        "0x9208"
-      ],
-      [
-        "0x1B4F",
-        "0x9207"
-      ]
-    ],
-```
-
 * Open a command line window, for windows please run `cmd.exe`
 ```
 cd ESPloitV2-master
