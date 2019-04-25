@@ -30,7 +30,7 @@ cd source
 * Flash the WHID with command
   * For Win, run `flash.bat`
   * For Unix Like, run `./flash.sh`
-* Your ESPloit is now ready to configure and or use.  
+* Your ESPloit is now ready to configure or use.  
   
 -----  
 Initial configuration  
