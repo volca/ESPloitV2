@@ -21,13 +21,6 @@ Initial Flashing
   
 * Install [platformio][pio]
 * Add `pio` to your envirement path
-* Run command 
-```
-pio platform install espressif8266
-```
-* Download [esptool][esptool] 0.4.14 and overwrite the tool-esptool directory
-  * For windows or mac OS, it should be `/Users/{your-name}/.platformio/packages/tool-esptool`
-  * For Unix like, find the directory at `$(HOME)/.platformio/packages/tool-esptool`
 * Download [source file](https://github.com/volca/ESPloitV2/archive/master.zip) and decompress the file
 * Open a command line window, for windows please run `cmd.exe`
 ```
