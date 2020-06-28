@@ -55,8 +55,8 @@ void reset_esp() {
 }
 
 void setup() {
-    Serial1.begin(115000);
-    Serial.begin(115000);
+    Serial1.begin(115200);
+    Serial.begin(115200);
     pinMode(enable_pin,     OUTPUT);
     pinMode(program_pin,    OUTPUT);
     pinMode(led_pin,        OUTPUT);
