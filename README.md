@@ -19,8 +19,8 @@ Video Demo
 Initial Flashing  
 -----  
   
-* Install [platformio][pio]
-* Add `pio` to your envirement path
+* Install [Platformio Core][pio]
+* Add `pio` to your envirement path. `pio` is a command of `platformio`
 * Download [source file](https://github.com/volca/ESPloitV2/archive/master.zip) and decompress the file
 * Open a command line window, for windows please run `cmd.exe`
 ```
@@ -426,5 +426,5 @@ ESPloitV2 software is licensed under the MIT License
  SOFTWARE.  
 */
 
-[pio]: http://docs.platformio.org/en/latest/installation.html
+[pio]: https://docs.platformio.org/en/latest/core/installation.html#piocore-install-shell-commands
 [esptool]: https://github.com/volca/esptool-ck/releases
